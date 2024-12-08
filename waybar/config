@@ -1,0 +1,79 @@
+{
+    "height": 24,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "temperature", "cpu", "memory", "network", "pulseaudio", "battery", "tray"
+    ],
+    "clock": {
+        "format": "{:L%d/%m/%Y | %H:%M}", // Formato: dd/mm/ano | hora:minuto (24h)
+        "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    },	
+    "cpu": {
+        "format": " {usage}%"
+    },
+    "memory": {
+        "format": " {used}GB" // Melhoria na visualização
+    },
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "{icon} {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+    "hyprland/workspaces": {
+        "format": "{name}", // Mostra o nome do workspace
+        "disable-scroll": false, // Ativa a troca de workspaces ao rolar o mouse
+        "icon-mapping": {
+            "1": "", // Ícone personalizado para o workspace 1
+            "2": "", // Ícone personalizado para o workspace 2
+            "3": ""  // Ícone personalizado para o workspace 3
+        },
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{capacity}% ({time} restante)" // Informações adicionais no tooltip
+    },
+	"network": {
+		"interface": "wlp3s0",
+		 "format": "{ifname}",
+		"format-wifi": "({signalStrength}%) ",
+		"format-ethernet": "{ifname} ",
+		"format-disconnected": "",
+		"tooltip-format": "{ifname}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-disconnected": "Disconnected",
+		"max-length": 50,
+        "on-click": "nm-applet"
+	},
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": " {icon} {volume}% {format_source}",
+        "format-bluetooth-muted": "  {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "foot -a pw-top pw-top"
+    },
+    "tray": {
+        "spacing": 10
+    }
+}
+

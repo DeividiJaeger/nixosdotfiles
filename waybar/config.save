@@ -1,0 +1,51 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "battery", "cpu", "memory"],
+
+  "workspaces": {
+    "all-outputs": true,
+    "format": "{}",
+    "on-scroll-up":"hyprctl dispatch workspace r-1",
+    "on-scroll-down":"hyprctl dispatch workspace r+1",
+    "on-click": "activate",
+    "persistent_workspaces": {
+      "*": 5,
+    },
+  },
+
+  "clock": {
+    "format": "{:%H:%M %d-%m-%Y}",
+	"on-click": "tags toggle calendar",
+	"tooltip": "false"
+  },
+
+  "network": {
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": "  {ipaddr}",
+    "format-disconnected": "󰌙  Disconnected",
+    "format": "{ifname}",
+    "on-click":"~/.config/ml4w/settings/networkmanager.sh",
+    "on-click-right":"~/.config/ml4w/scripts/nm-applet.sh toggle",
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-charging": "  {capacity}%",
+    "format-full": "  Full",
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""]
+  },
+	
+ "cpu": {
+	"format": "/ C {usage}",
+	"op-click": "~/.config/ml4w/settings/system-monitor.sh"	
+},
+
+"memory":{
+	"format": "/ M {}% ",
+	"on-click": "~/.config/ml4w/settings/system-monitor.sh"
+}, 
+	
+}

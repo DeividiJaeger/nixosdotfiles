@@ -1,0 +1,205 @@
+* {
+  /*`otf-font-awesome` is required to be installed for icons */
+  font-family: "Noto Sans CJK KR Regular";
+  font-size: 13px;
+  min-height: 0;
+  border-radius: 10px; 
+}
+
+#waybar {
+  background: transparent;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+#waybar.hidden {
+  opacity: 0.2;
+}
+
+#waybar.empty #window {
+  background-color: transparent;
+}
+
+#window {
+  margin: 2px;  /* Added 'px' for valid unit */
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+}
+
+
+#mode {
+  background-color: #64727D;
+  border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+  margin: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+
+#clock {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#battery icon {
+  color: red;
+}
+
+#battery.charging, #battery.plugged {
+  color: #ffffff;
+  background-color: #26A65B;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.warning:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+/* Estilos básicos para o #network */
+#network {
+  margin: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: rgba(0, 0, 0, 0.3); /* Cor de fundo comum */
+  color: #ffffff;
+}
+
+/* Estado de rede desconectada */
+#network.disconnected {
+  background-color: #f53c3c; /* Cor de fundo para desconectado (vermelho) */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Estado de rede desabilitada */
+#network.disabled {
+  background-color: #7f8c8d; /* Cor de fundo para desabilitada (cinza) */
+  color: #bdc3c7; /* Texto mais suave */
+}
+
+/* Estado de rede ligada */
+#network.linked {
+  background-color: #2ecc71; /* Cor de fundo para ligada (verde) */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Estado de rede ethernet */
+#network.ethernet {
+  background-color: #3498db; /* Cor de fundo para ethernet (azul) */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Estado de rede wifi */
+#network.wifi {
+  /*background-color: #f39c12;  Cor de fundo para wifi (amarelo) */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#idle_inhibitor.activated {
+  background-color: #ecf0f1;
+  color: #2d3436;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+
+#workspaces button {
+  color: #ffffff;              /* Cor da fonte */
+  font-weight: bold;           /* Fonte em negrito */
+  border-radius: 10px;         /* Bordas arredondadas */
+  background-color: rgba(0, 0, 0, 0.3); /* Cor de fundo (mantém a transparência atual) */
+  margin: 2px;                 /* Espaçamento entre os botões */
+  padding: 4px 8px;            /* Ajuste de padding para aparência */
+  transition: background-color 0.3s ease; /* Efeito suave ao mudar cor */
+}
+
+/* Botão do workspace ativo */
+#workspaces button.active {
+  background-color: #f1aa40;   /* Cor de fundo laranja para o workspace ativo */
+  color: #282a36;              /* Cor do texto escura para contraste */
+  border-radius: 10px;         /* Bordas arredondadas */
+  box-shadow: 0 0 10px rgba(241, 170, 64, 0.6); /* Sombra para destaque */
+}
+
+/* Botão ao passar o mouse */
+#workspaces button:hover {
+  background-color: #f1aa40;   /* Cor ao passar o mouse */
+  color: #282a36;              /* Texto escuro para contraste */
+}
