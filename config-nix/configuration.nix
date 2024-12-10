@@ -49,6 +49,7 @@
   services.xserver.enable = true;
 
 
+ 
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -131,6 +132,7 @@
     brave
     php
     apacheHttpd
+    mysql84
     kitty
     sqlite
 
@@ -154,6 +156,7 @@
     waypaper
     networkmanager
     blueman
+    tree
     brightnessctl
     pulseaudio
     pavucontrol
@@ -166,14 +169,17 @@
 
 
 
-
 # enable Hyprland
 programs.hyprland.enable = true;
 
 #exec-once = "swaybg -m fill -i ~/home/deividi/Downloads/deeping.jpg"
 
-	
-       
+
+
+ # Ativando o Docker
+ #  services.docker.enable = true;
+  virtualisation.docker.enable = true;
+      
   
 
   # Some programs need SUID wrappers, can be configured further or are
