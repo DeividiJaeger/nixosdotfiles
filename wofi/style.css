@@ -1,6 +1,6 @@
 window {
     margin: 0px;
-    border: 1px solid rgba(41, 40, 40, 0.6); /* Cor ajustada com menor opacidade */
+    border: 1px solid rgba(230, 152, 7, 0.973); /* Cor ajustada com menor opacidade */
     background-color: rgba(8, 9, 10, 0.5);  /* Tom mais escuro e mais transparente */
     border-radius: 10px;
 }
@@ -8,8 +8,8 @@ window {
 #input {
     margin: 5px;
     border: none;
-    color: #D3C6AA;
-    background-color: rgba(20, 25, 28, 0.5); /* Tom escuro e transparência ajustada */
+    color: #eeeae0;
+    background-color: rgba(0, 0, 0, 0.5); /* Tom escuro e transparência ajustada */
 }
 
 #inner-box {
@@ -22,7 +22,7 @@ window {
 #outer-box {
     margin: 5px;
     border: none;
-    background-color: rgba(14, 15, 15, 0.5); /* Consistência com outros elementos */
+    background-color: rgba(15, 15, 15, 0.829); /* Consistência com outros elementos */
 }
 
 #scroll {
@@ -39,5 +39,5 @@ window {
 }
 
 #entry:selected {
-    background-color: rgba(25, 30, 35, 0.6); /* Destaque com mais visibilidade */
+    background-color: rgba(247, 173, 13, 0.185); /* Destaque com mais visibilidade */
 }
