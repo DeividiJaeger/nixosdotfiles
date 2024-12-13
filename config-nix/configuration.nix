@@ -146,8 +146,9 @@
     # pacotes essencias
     networkmanagerapplet
     direnv
-    gscreenshot
+    sway-contrib.grimshot
     fontconfig
+    swaynotificationcenter
     font-awesome
     wl-clipboard
     waybar
